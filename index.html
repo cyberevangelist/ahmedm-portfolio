@@ -1118,6 +1118,39 @@
       margin-bottom: 12px !important;
     }
 
+  
+    /* Expanded cyber collaboration card grid */
+    #cyber-collaboration .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    #cyber-collaboration .card {
+      min-height: 270px;
+    }
+
+    #cyber-collaboration .card .icon {
+      min-width: 58px;
+      max-width: max-content;
+    }
+
+    @media (max-width: 1180px) {
+      #cyber-collaboration .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      #cyber-collaboration .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      #cyber-collaboration .card {
+        min-height: auto;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1334,45 +1367,71 @@
       </div>
     </section>
 
+
     <section class="section" id="cyber-collaboration">
       <div class="section-heading">
         <div>
           <div class="section-kicker">Cyber Collaboration and Threat Landscape</div>
           <h2 class="section-title">Working independently and with industry professionals to stay aligned with a changing cyber threat landscape</h2>
         </div>
-        <p class="section-note">Cyber leadership requires more than internal execution. It requires awareness, collaboration, practical intelligence, and the ability to translate changing threats into action.</p>
+        <p class="section-note">Cyber leadership requires continuous awareness, practitioner collaboration and the ability to translate changing threats into practical improvements. My experience spans cyber defense, incident response, CSIRT coordination, security device management, purple team exercises, threat hunting, MDR operations, detection engineering, security engineering and attack surface management.</p>
       </div>
 
       <div class="cards-grid">
         <article class="card fade-in">
           <div class="icon">FIELD</div>
-          <h3>Independent Cyber Research and Operational Review</h3>
-          <p>I actively work through cyber topics, operational patterns, threat activity, security workflows, and practical risk scenarios to understand how threats are changing and how organizations should respond with better visibility, controls, and execution discipline.</p>
+          <h3>Cyber Defense and Operational Review</h3>
+          <p>I actively work through cyber topics, operational patterns, threat activity, security workflows and practical risk scenarios to understand how threats are changing and how organizations should respond. My focus includes improving visibility, strengthening controls, validating response readiness and helping teams move from reactive handling toward structured cyber defense.</p>
         </article>
 
         <article class="card fade-in">
           <div class="icon">PEER</div>
           <h3>Industry and Practitioner Collaboration</h3>
-          <p>I engage with security practitioners, technology leaders, delivery teams, client stakeholders, and industry professionals to exchange practical perspectives, validate operating assumptions, and understand how different environments are responding to modern cyber risk.</p>
+          <p>I engage with security practitioners, technology leaders, delivery teams, client stakeholders and industry professionals to exchange practical perspectives, validate operating assumptions and understand how different environments are responding to modern cyber risk. These conversations help shape better thinking across detection, response, governance, resilience and operational security maturity.</p>
         </article>
 
         <article class="card fade-in">
           <div class="icon">THREAT</div>
-          <h3>Changing Threat Landscape Awareness</h3>
-          <p>My focus includes ransomware operations, identity-driven attacks, supply chain exposure, cloud misconfiguration, endpoint compromise, vulnerability exploitation, AI-enabled attacker behavior, third-party risk, and the operational impact of emerging threats on business continuity.</p>
+          <h3>Threat Landscape and Attack Surface Awareness</h3>
+          <p>My focus includes ransomware operations, identity-driven attacks, endpoint compromise, cloud misconfiguration, supply chain exposure, vulnerability exploitation, third-party risk, AI-enabled attacker behavior and the growing importance of attack surface management from an asset, exposure, control and business impact perspective.</p>
+        </article>
+
+        <article class="card fade-in">
+          <div class="icon">CSIRT</div>
+          <h3>Incident Response, CSIRT and Remediation</h3>
+          <p>Experience across security incident response, major incident coordination, CSIRT-style workflows, escalation handling, remediation tracking, stakeholder communication and post-incident improvement. The objective is not only to respond to incidents, but to reduce repeat issues, improve ownership and strengthen future readiness.</p>
+        </article>
+
+        <article class="card fade-in">
+          <div class="icon">MDR</div>
+          <h3>Detection, Security Engineering and MDR</h3>
+          <p>Experience across detection engineering, MDR operating models, threat hunting, security monitoring, alert enrichment, security device management, SIEM and SOAR workflows, rule tuning, playbook improvement and response automation that connects technical controls with measurable operational outcomes.</p>
+        </article>
+
+        <article class="card fade-in">
+          <div class="icon">PURPLE</div>
+          <h3>Purple Teaming and Control Validation</h3>
+          <p>Exposure to purple team exercises and adversary-informed validation approaches that help test how detection, response, people, processes and tools perform against realistic threat behaviors. This supports stronger detection logic, better playbooks, improved analyst readiness and more meaningful control validation.</p>
+        </article>
+
+        <article class="card fade-in">
+          <div class="icon">ASM</div>
+          <h3>Attack Surface Management</h3>
+          <p>Experience-oriented focus on identifying exposed assets, visibility gaps, vulnerable services, unmanaged risks, external exposure, ownership gaps and remediation pathways that help reduce attack opportunities before they become active security incidents.</p>
         </article>
 
         <article class="card fade-in">
           <div class="icon">ACTION</div>
           <h3>From Threat Awareness to Practical Improvement</h3>
-          <p>I translate cyber threat changes into practical improvements across detection, response, vulnerability prioritization, governance, playbooks, executive reporting, backlog reduction, control validation, and stakeholder communication.</p>
+          <p>I translate cyber threat changes into practical improvements across detection, response, vulnerability prioritization, attack surface reduction, governance, playbooks, executive reporting, backlog reduction, control validation and stakeholder communication.</p>
         </article>
       </div>
 
       <div class="panel fade-in">
-        <div class="mini-punch">The cyber landscape does not stand still. My approach is to stay connected, keep learning, compare field realities, and turn threat awareness into better operating models</div>
+        <div class="mini-punch">The cyber landscape does not stand still. My approach is to stay connected, keep learning, compare field realities and turn threat awareness into better operating models, stronger cyber defense and more resilient security outcomes</div>
       </div>
     </section>
+
 
     <section class="section" id="processes-playbooks">
       <div class="section-heading">
