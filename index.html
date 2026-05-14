@@ -3,57 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ahmed M | IT Infrastructure, GRC, Cyber & Cloud Security Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Ahmed M | Live Online Technology Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #05070b;
       --panel: rgba(10, 18, 30, 0.92);
-      --panel-soft: rgba(14, 26, 43, 0.78);
-      --panel-border: rgba(60, 255, 220, 0.18);
+      --panel-2: rgba(14, 26, 43, 0.78);
+      --panel-3: rgba(5, 10, 18, 0.72);
+      --border: rgba(60, 255, 220, 0.18);
+      --border-soft: rgba(255, 255, 255, 0.08);
       --text: #eef7ff;
       --muted: #8fa3b7;
+      --muted-2: #6f8296;
       --cyan: #22f5d0;
       --blue: #31a8ff;
       --green: #6dff8f;
       --amber: #ffc857;
+      --violet: #8a7cff;
       --red: #ff4d6d;
-      --purple: #8a7cff;
-      --line: rgba(34, 245, 208, 0.35);
-      --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
+      line-height: 1.65;
       overflow-x: hidden;
-      line-height: 1.6;
     }
 
     body::before {
       content: '';
       position: fixed;
       inset: 0;
-      z-index: -3;
+      z-index: -4;
       background:
-        radial-gradient(circle at 15% 15%, rgba(34, 245, 208, 0.12), transparent 34%),
-        radial-gradient(circle at 80% 10%, rgba(49, 168, 255, 0.14), transparent 34%),
-        radial-gradient(circle at 70% 80%, rgba(138, 124, 255, 0.12), transparent 36%),
-        linear-gradient(180deg, #04070b 0%, #07101a 48%, #04070b 100%);
+        radial-gradient(circle at 12% 8%, rgba(34, 245, 208, 0.15), transparent 34%),
+        radial-gradient(circle at 82% 14%, rgba(49, 168, 255, 0.16), transparent 30%),
+        radial-gradient(circle at 70% 86%, rgba(138, 124, 255, 0.12), transparent 36%),
+        linear-gradient(180deg, #04070b 0%, #07101a 45%, #04070b 100%);
     }
 
-    .grid-overlay {
+    .grid {
       position: fixed;
       inset: 0;
-      z-index: -2;
+      z-index: -3;
       background-image:
-        linear-gradient(rgba(34,245,208,0.055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(34,245,208,0.055) 1px, transparent 1px);
+        linear-gradient(rgba(34, 245, 208, 0.052) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34, 245, 208, 0.052) 1px, transparent 1px);
       background-size: 48px 48px;
       mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.1));
       animation: gridMove 22s linear infinite;
@@ -73,49 +73,69 @@
       to { transform: translate(48px, 48px); }
     }
 
-    nav {
+    .orb {
       position: fixed;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      filter: blur(48px);
+      opacity: 0.20;
+      z-index: -2;
+      background: var(--cyan);
+      top: 18%;
+      right: -160px;
+    }
+
+    .wrap { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+
+    nav {
+      position: sticky;
       top: 0;
-      width: 100%;
-      z-index: 100;
-      padding: 14px 5%;
+      z-index: 50;
+      background: rgba(5, 7, 11, 0.84);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(5, 7, 11, 0.84);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--panel-border);
+      padding: 14px 0;
+      gap: 18px;
     }
 
-    .logo {
+    .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.98rem;
       font-weight: 800;
-      letter-spacing: 1.4px;
       color: var(--cyan);
+      letter-spacing: 1px;
+      font-size: 0.86rem;
       text-transform: uppercase;
     }
 
-    .live-dot {
+    .dot {
       width: 10px;
       height: 10px;
       border-radius: 50%;
       background: var(--green);
-      box-shadow: 0 0 16px var(--green);
-      animation: pulse 1.5s ease-in-out infinite;
+      box-shadow: 0 0 18px var(--green);
+      animation: onlineBlink 1.4s ease-in-out infinite;
     }
 
-    @keyframes pulse {
+    @keyframes onlineBlink {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.45; transform: scale(0.75); }
+      50% { opacity: 0.35; transform: scale(0.72); }
     }
 
     .nav-links {
       display: flex;
-      gap: 22px;
+      gap: 18px;
       list-style: none;
       align-items: center;
     }
@@ -123,133 +143,100 @@
     .nav-links a {
       color: var(--muted);
       text-decoration: none;
-      font-size: 0.86rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: 0.8px;
       text-transform: uppercase;
-      transition: 0.25s ease;
     }
 
-    .nav-links a:hover { color: var(--cyan); text-shadow: 0 0 14px rgba(34,245,208,0.45); }
-
-    .terminal-status {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      color: var(--green);
-      border: 1px solid rgba(109,255,143,0.28);
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(109,255,143,0.06);
-    }
+    .nav-links a:hover { color: var(--cyan); }
 
     .hero {
-      min-height: 100vh;
+      padding: 86px 0 50px;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 32px;
       align-items: center;
-      gap: 34px;
-      padding: 112px 5% 60px;
+      min-height: 88vh;
     }
 
-    .eyebrow {
+    .kicker {
       display: inline-flex;
       align-items: center;
       gap: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       color: var(--cyan);
-      border: 1px solid var(--panel-border);
-      background: rgba(34,245,208,0.07);
       padding: 8px 12px;
       border-radius: 999px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 1px;
+      border: 1px solid var(--border);
+      background: rgba(34, 245, 208, 0.075);
       margin-bottom: 22px;
     }
 
-    .hero h1 {
-      font-size: clamp(2.8rem, 6vw, 6.5rem);
-      line-height: 0.92;
-      letter-spacing: -4px;
+    h1 {
+      font-size: clamp(3.1rem, 8vw, 7rem);
+      line-height: 0.88;
+      letter-spacing: -5px;
       font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, #fff, var(--cyan), var(--blue));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-title {
+      font-size: clamp(1.2rem, 2.2vw, 1.85rem);
+      color: #d7e8f8;
+      font-weight: 700;
+      max-width: 850px;
+      line-height: 1.28;
+      margin-bottom: 18px;
+    }
+
+    .hero-copy {
+      color: var(--muted);
+      font-size: 1.02rem;
+      max-width: 850px;
       margin-bottom: 24px;
     }
 
-    .gradient-text {
-      background: linear-gradient(90deg, var(--text), var(--cyan), var(--blue));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-shadow: 0 0 55px rgba(34,245,208,0.14);
-    }
+    .hero-copy strong { color: var(--text); }
 
-    .hero-subtitle {
-      color: #b7c9db;
-      max-width: 820px;
-      font-size: 1.14rem;
-      margin-bottom: 28px;
-    }
-
-    .hero-subtitle strong { color: var(--text); }
-
-    .cta-row {
+    .tag-row, .pill-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 28px;
+      gap: 9px;
+      margin-top: 16px;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 13px 18px;
-      border-radius: 12px;
-      text-decoration: none;
+    .pill, .tag {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.88rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      transition: 0.25s ease;
-    }
-
-    .btn-primary {
-      color: #041014;
-      background: linear-gradient(90deg, var(--cyan), var(--green));
-      box-shadow: 0 0 34px rgba(34,245,208,0.2);
-    }
-
-    .btn-secondary {
-      color: var(--cyan);
-      border: 1px solid var(--panel-border);
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
       background: rgba(12, 22, 36, 0.72);
-    }
-
-    .btn:hover { transform: translateY(-3px); }
-
-    .meta-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
       color: var(--muted);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
+      font-size: 0.74rem;
+      padding: 8px 10px;
     }
 
-    .meta-strip span {
-      padding: 8px 10px;
-      border: 1px solid rgba(143,163,183,0.18);
-      background: rgba(12, 22, 36, 0.64);
-      border-radius: 10px;
-    }
+    .pill { color: var(--cyan); border-color: rgba(34, 245, 208, 0.18); background: rgba(34, 245, 208, 0.055); }
 
     .command-panel {
       position: relative;
-      background: linear-gradient(180deg, rgba(10,18,30,0.94), rgba(7,12,21,0.92));
-      border: 1px solid var(--panel-border);
-      border-radius: 22px;
-      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      background: linear-gradient(180deg, rgba(10, 18, 30, 0.92), rgba(7, 12, 21, 0.92));
       box-shadow: var(--shadow);
+      padding: 22px;
       overflow: hidden;
     }
 
@@ -257,27 +244,28 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(34,245,208,0.1), transparent 38%, rgba(49,168,255,0.07));
+      background: linear-gradient(135deg, rgba(34, 245, 208, 0.12), transparent 42%, rgba(49, 168, 255, 0.08));
       pointer-events: none;
     }
 
-    .panel-header {
+    .panel-head {
       position: relative;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       margin-bottom: 18px;
       font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
       color: var(--cyan);
-      font-size: 0.86rem;
       font-weight: 800;
       text-transform: uppercase;
+      letter-spacing: 0.8px;
     }
 
-    .threat-chip {
-      color: var(--red);
-      border: 1px solid rgba(255,77,109,0.35);
-      background: rgba(255,77,109,0.08);
+    .status-chip {
+      color: var(--green);
+      border: 1px solid rgba(124, 255, 156, 0.25);
+      background: rgba(124, 255, 156, 0.08);
       padding: 6px 9px;
       border-radius: 999px;
     }
@@ -287,558 +275,1220 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
+      margin-bottom: 18px;
     }
 
-    .metric-card {
-      background: rgba(5, 10, 18, 0.72);
-      border: 1px solid rgba(34,245,208,0.14);
-      border-radius: 16px;
+    .metric {
+      min-height: 124px;
       padding: 16px;
-      min-height: 116px;
+      border-radius: 18px;
+      border: 1px solid rgba(34, 245, 208, 0.13);
+      background: rgba(4, 9, 18, 0.72);
     }
 
-    .metric-card .value {
+    .metric strong {
+      display: block;
       font-family: 'JetBrains Mono', monospace;
       font-size: 2rem;
-      font-weight: 900;
-      color: var(--text);
       line-height: 1;
+      color: var(--text);
       margin-bottom: 8px;
     }
 
-    .metric-card .label {
+    .metric span {
       color: var(--muted);
       font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
+      line-height: 1.35;
+      display: block;
     }
 
-    .metric-card .accent { color: var(--cyan); }
-    .metric-card .green { color: var(--green); }
-    .metric-card .amber { color: var(--amber); }
-    .metric-card .blue { color: var(--blue); }
+    .leadership-note {
+      position: relative;
+      border-left: 3px solid var(--cyan);
+      background: rgba(34, 245, 208, 0.06);
+      border-radius: 14px;
+      padding: 14px 16px;
+      color: #cfe2f3;
+      font-size: 0.92rem;
+    }
 
     .section {
-      padding: 80px 5%;
+      padding: 64px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
     }
 
-    .section-heading {
-      display: flex;
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 28px;
       align-items: end;
-      justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
-    .section-kicker {
+    .section-label {
       font-family: 'JetBrains Mono', monospace;
       color: var(--cyan);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 800;
       letter-spacing: 1px;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      margin-bottom: 9px;
     }
 
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3.6rem);
-      line-height: 1;
-      letter-spacing: -2px;
+    h2 {
+      font-size: clamp(2rem, 4.2vw, 3.7rem);
+      line-height: 0.98;
+      letter-spacing: -2.3px;
+      font-weight: 900;
     }
 
-    .section-note {
-      max-width: 520px;
+    .punch {
+      color: #d9ecfb;
+      font-size: 1.08rem;
+      font-weight: 700;
+      line-height: 1.45;
+      border-left: 3px solid var(--cyan);
+      padding-left: 16px;
+    }
+
+    .body-copy {
       color: var(--muted);
       font-size: 0.98rem;
+      display: grid;
+      gap: 14px;
     }
 
-    .cards-grid {
+    .body-copy strong { color: var(--text); }
+
+    .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
     }
 
     .card {
-      background: var(--panel-soft);
-      border: 1px solid var(--panel-border);
-      border-radius: 18px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--panel-2);
       padding: 20px;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.25);
-      transition: 0.25s ease;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.22);
+      min-height: 190px;
     }
 
-    .card:hover { transform: translateY(-5px); border-color: rgba(34,245,208,0.46); }
+    .card.compact { min-height: auto; }
 
-    .card h3 {
-      color: var(--text);
-      font-size: 1.08rem;
-      margin-bottom: 10px;
-    }
-
-    .card p, .card li { color: var(--muted); font-size: 0.94rem; }
-
-    .card ul { padding-left: 18px; display: grid; gap: 7px; }
-
-    .icon {
+    .num {
+      display: inline-grid;
+      place-items: center;
       width: 42px;
       height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: rgba(34,245,208,0.09);
-      border: 1px solid rgba(34,245,208,0.18);
+      border-radius: 14px;
+      border: 1px solid rgba(34, 245, 208, 0.22);
+      background: rgba(34, 245, 208, 0.08);
       color: var(--cyan);
       font-family: 'JetBrains Mono', monospace;
       font-weight: 900;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
-    .intel-layout {
+    h3 {
+      font-size: 1.06rem;
+      line-height: 1.3;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+      font-size: 0.91rem;
+    }
+
+    ul.clean {
+      list-style: none;
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      gap: 8px;
+      padding: 0;
+    }
+
+    ul.clean li {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    ul.clean li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+      position: absolute;
+      left: 0;
+      top: 10px;
+      box-shadow: 0 0 12px rgba(37,244,208,0.6);
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 0.84fr 1.16fr;
       gap: 18px;
+      align-items: start;
     }
 
     .timeline {
       display: grid;
-      gap: 14px;
+      gap: 12px;
+      position: sticky;
+      top: 86px;
     }
 
-    .timeline-item {
-      position: relative;
-      padding: 18px 18px 18px 44px;
-      background: rgba(10,18,30,0.78);
-      border: 1px solid var(--panel-border);
+    .timeline-box {
+      padding: 16px 18px;
       border-radius: 18px;
+      background: rgba(7, 12, 21, 0.70);
+      border: 1px solid var(--border-soft);
     }
 
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: 18px;
-      top: 24px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--cyan);
-      box-shadow: 0 0 18px var(--cyan);
+    .timeline-box b {
+      display: block;
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-bottom: 4px;
     }
 
-    .timeline-item .date {
+    .timeline-box span {
+      color: var(--muted-2);
+      font-size: 0.82rem;
+    }
+
+    .chapters { display: grid; gap: 16px; }
+
+    .chapter {
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(10, 18, 30, 0.82), rgba(8, 15, 28, 0.78));
+      padding: 22px;
+    }
+
+    .chapter-phase {
       font-family: 'JetBrains Mono', monospace;
       color: var(--green);
-      font-size: 0.78rem;
+      font-size: 0.73rem;
       font-weight: 800;
-      margin-bottom: 5px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
     }
 
-    .timeline-item h3 { font-size: 1.05rem; margin-bottom: 6px; }
-    .timeline-item p { color: var(--muted); font-size: 0.93rem; }
+    .chapter h3 { font-size: 1.22rem; }
+    .chapter p { color: var(--muted); font-size: 0.95rem; margin-top: 10px; }
+    .chapter .mini-punch {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(34, 245, 208, 0.07);
+      border: 1px solid rgba(34, 245, 208, 0.14);
+      color: #dffdf8;
+      font-weight: 700;
+      font-size: 0.94rem;
+    }
 
-    .matrix {
+    .split {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
+      gap: 16px;
     }
 
-    .matrix .card { min-height: 190px; }
+    .feature {
+      padding: 18px;
+      border-radius: 20px;
+      background: var(--panel);
+      border: 1px solid var(--border-soft);
+    }
 
-    .tag-cloud {
+    .feature h3 { color: var(--cyan); }
+    .feature p { color: var(--muted); font-size: 0.92rem; }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .tool-card {
+      border: 1px solid var(--border-soft);
+      background: rgba(10, 20, 36, 0.82);
+      border-radius: 20px;
+      padding: 18px;
+    }
+
+    .tool-card h3 { font-size: 1rem; }
+
+    .chips {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
+      margin-top: 12px;
     }
 
-    .tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
+    .chip {
       color: var(--cyan);
-      border: 1px solid rgba(34,245,208,0.18);
-      background: rgba(34,245,208,0.06);
+      background: rgba(34, 245, 208, 0.055);
+      border: 1px solid rgba(34, 245, 208, 0.15);
       border-radius: 999px;
-      padding: 8px 11px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      padding: 7px 9px;
     }
 
-    .cert-row {
+    .certs {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 12px;
     }
 
     .cert {
-      text-align: center;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(10,18,30,0.8);
-      border-radius: 16px;
-      padding: 18px 12px;
+      border: 1px solid var(--border-soft);
+      border-radius: 18px;
+      background: rgba(8, 16, 29, 0.82);
+      padding: 16px;
     }
 
-    .cert strong {
-      display: block;
-      color: var(--text);
-      font-size: 1rem;
-      margin-bottom: 6px;
-    }
+    .cert strong { display: block; color: var(--text); font-size: 0.98rem; margin-bottom: 5px; }
+    .cert span { color: var(--muted); font-size: 0.84rem; }
 
-    .cert span { color: var(--muted); font-size: 0.82rem; }
-
-    .contact-panel {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      align-items: stretch;
-      background: linear-gradient(135deg, rgba(34,245,208,0.08), rgba(49,168,255,0.06));
-      border: 1px solid var(--panel-border);
-      border-radius: 24px;
-      padding: 24px;
+    .availability {
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(37,244,208,0.08), rgba(56,167,255,0.07));
+      padding: 28px;
       box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: center;
     }
 
-    .contact-panel h2 {
-      font-size: clamp(2rem, 4vw, 3.6rem);
-      line-height: 1;
-      letter-spacing: -2px;
-      margin-bottom: 16px;
-    }
-
-    .contact-panel p { color: var(--muted); margin-bottom: 18px; }
-
-    .contact-list {
+    .contact-card {
+      border-radius: 20px;
+      border: 1px solid var(--border-soft);
+      background: rgba(3, 8, 16, 0.52);
+      padding: 18px;
       display: grid;
       gap: 10px;
-      font-family: 'JetBrains Mono', monospace;
-      color: var(--text);
-      font-size: 0.9rem;
     }
 
-    .contact-list span {
-      display: block;
-      padding: 12px;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px;
-      background: rgba(5,10,18,0.62);
+    .contact-line {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--muted);
+      font-size: 0.82rem;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
+
+    .contact-line:last-child { border-bottom: none; }
+    .contact-line a { color: var(--cyan); text-decoration: none; }
 
     footer {
-      border-top: 1px solid var(--panel-border);
-      padding: 28px 5%;
-      color: var(--muted);
-      font-size: 0.86rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
+      padding: 28px 0 40px;
+      color: var(--muted-2);
       font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem;
+      border-top: 1px solid var(--border-soft);
+      margin-top: 38px;
     }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: 0.65s ease;
-    }
-
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 980px) {
-      .hero, .intel-layout, .contact-panel { grid-template-columns: 1fr; }
-      .cards-grid, .cert-row { grid-template-columns: repeat(2, 1fr); }
+      .hero, .section-head, .story-grid, .availability { grid-template-columns: 1fr; }
+      .cards, .tools-grid, .certs { grid-template-columns: repeat(2, 1fr); }
+      .timeline { position: static; }
       .nav-links { display: none; }
-      .hero h1 { letter-spacing: -2px; }
+      h1 { letter-spacing: -3px; }
     }
 
-    @media (max-width: 620px) {
-      nav { padding: 12px 4%; }
-      .terminal-status { display: none; }
-      .hero { padding-top: 96px; }
-      .metric-grid, .cards-grid, .matrix, .cert-row { grid-template-columns: 1fr; }
-      .section-heading { display: block; }
+    @media (max-width: 640px) {
+      .wrap, .nav-inner { width: min(100% - 26px, 1180px); }
+      .metric-grid, .cards, .tools-grid, .certs, .split { grid-template-columns: 1fr; }
+      .hero { padding-top: 54px; }
+      h1 { font-size: 3.2rem; }
     }
+  
+    /* Refined AI capability layout */
+    #ai-resilience .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    #ai-resilience .card {
+      position: relative;
+      min-height: 260px;
+      padding: 28px;
+      border-radius: 26px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(0, 255, 213, 0.12), transparent 34%),
+        linear-gradient(145deg, rgba(10, 24, 38, 0.96), rgba(3, 13, 24, 0.96));
+      border: 1px solid rgba(0, 255, 213, 0.22);
+      box-shadow: 0 22px 65px rgba(0, 0, 0, 0.24);
+    }
+
+    #ai-resilience .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(0, 255, 213, 0.08), transparent 35%, rgba(21, 140, 255, 0.08));
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    #ai-resilience .card .icon {
+      display: inline-flex;
+      width: auto;
+      min-width: 58px;
+      height: 34px;
+      padding: 0 13px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      color: #00ffd5;
+      background: rgba(0, 255, 213, 0.08);
+      border: 1px solid rgba(0, 255, 213, 0.25);
+      font-weight: 700;
+    }
+
+    #ai-resilience .card h3 {
+      font-size: 22px;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    #ai-resilience .card p {
+      font-size: 15.5px;
+      line-height: 1.75;
+    }
+
+    #ai-resilience .mini-punch {
+      grid-column: 1 / -1;
+      padding: 20px 24px;
+      border-radius: 22px;
+      background:
+        linear-gradient(90deg, rgba(0, 255, 213, 0.10), rgba(21, 140, 255, 0.08), rgba(0, 255, 213, 0.04));
+      border: 1px solid rgba(0, 255, 213, 0.25);
+    }
+
+    @media (max-width: 1050px) {
+      #ai-resilience .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      #ai-resilience .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      #ai-resilience .card {
+        min-height: auto;
+      }
+    }
+
+    /* Refined processes, playbooks and workbooks layout */
+    #processes-playbooks .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    #processes-playbooks .card {
+      position: relative;
+      min-height: 245px;
+      padding: 24px;
+      border-radius: 24px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(0, 255, 213, 0.11), transparent 34%),
+        linear-gradient(145deg, rgba(10, 24, 38, 0.96), rgba(3, 13, 24, 0.97));
+      border: 1px solid rgba(0, 255, 213, 0.22);
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.22);
+    }
+
+    #processes-playbooks .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(0, 255, 213, 0.08), transparent 42%, rgba(21, 140, 255, 0.07));
+      pointer-events: none;
+    }
+
+    #processes-playbooks .card .icon {
+      display: inline-flex;
+      width: auto;
+      min-width: 54px;
+      height: 32px;
+      padding: 0 12px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      font-size: 12px;
+      letter-spacing: 0.11em;
+      color: #00ffd5;
+      background: rgba(0, 255, 213, 0.08);
+      border: 1px solid rgba(0, 255, 213, 0.25);
+      font-weight: 700;
+    }
+
+    #processes-playbooks .card h3 {
+      font-size: 19px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    #processes-playbooks .card p {
+      font-size: 14.8px;
+      line-height: 1.68;
+    }
+
+    #processes-playbooks .panel {
+      border-radius: 26px;
+    }
+
+    @media (max-width: 1180px) {
+      #processes-playbooks .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      #processes-playbooks .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      #processes-playbooks .card {
+        min-height: auto;
+      }
+    }
+
+    /* Refined cyber collaboration layout */
+    #cyber-collaboration .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    #cyber-collaboration .card {
+      min-height: 255px;
+      padding: 24px;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(0, 255, 213, 0.11), transparent 34%),
+        linear-gradient(145deg, rgba(10, 24, 38, 0.96), rgba(3, 13, 24, 0.97));
+      border: 1px solid rgba(0, 255, 213, 0.22);
+    }
+
+    #cyber-collaboration .card .icon {
+      display: inline-flex;
+      width: auto;
+      min-width: 64px;
+      height: 32px;
+      padding: 0 12px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      font-size: 12px;
+      letter-spacing: 0.11em;
+      color: #00ffd5;
+      background: rgba(0, 255, 213, 0.08);
+      border: 1px solid rgba(0, 255, 213, 0.25);
+      font-weight: 700;
+    }
+
+    #cyber-collaboration .card h3 {
+      font-size: 19px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    #cyber-collaboration .card p {
+      font-size: 14.8px;
+      line-height: 1.68;
+    }
+
+    @media (max-width: 1180px) {
+      #cyber-collaboration .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      #cyber-collaboration .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      #cyber-collaboration .card {
+        min-height: auto;
+      }
+    }
+
+  
+    /* Refined closing footer */
+    .closing-footer {
+      margin-top: 72px;
+      padding: 34px 28px;
+      border-radius: 28px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(0, 255, 213, 0.13), transparent 38%),
+        linear-gradient(145deg, rgba(10, 24, 38, 0.96), rgba(3, 13, 24, 0.97));
+      border: 1px solid rgba(0, 255, 213, 0.25);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+    }
+
+    .closing-footer .closing-kicker {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #00ffd5;
+      background: rgba(0, 255, 213, 0.08);
+      border: 1px solid rgba(0, 255, 213, 0.24);
+      font-weight: 700;
+    }
+
+    .closing-footer h2 {
+      margin: 0 0 12px;
+      font-size: clamp(26px, 3vw, 40px);
+      line-height: 1.15;
+      color: #ffffff;
+    }
+
+    .closing-footer p {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: 17px;
+      line-height: 1.75;
+      color: rgba(230, 247, 255, 0.82);
+    }
+
+    footer .dot,
+    footer .status-dot,
+    .closing-footer .dot,
+    .closing-footer .status-dot {
+      animation: none !important;
+      box-shadow: none !important;
+    }
+
+  
+    /* Remove bottom status dot remnants */
+    footer .dot,
+    footer .status-dot,
+    .page-footer .dot,
+    .page-footer .status-dot,
+    .bottom-bar .dot,
+    .bottom-bar .status-dot,
+    .footer-status,
+    .status-footer,
+    .bottom-status {
+      display: none !important;
+      visibility: hidden !important;
+      animation: none !important;
+    }
+
+  
+    /* Hide leftover bottom highlighted status indicators */
+    body > .dot,
+    body > .status-dot,
+    main + .dot,
+    main + .status-dot,
+    .site-footer,
+    .page-footer,
+    .footer-status,
+    .status-footer,
+    .bottom-status,
+    .bottom-bar {
+      display: none !important;
+      visibility: hidden !important;
+      animation: none !important;
+    }
+
+  
+    /* Icon-only protected contact actions */
+    .secure-contact-icons {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .secure-contact-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #00ffd5;
+      background:
+        radial-gradient(circle at 30% 15%, rgba(0, 255, 213, 0.18), transparent 38%),
+        linear-gradient(145deg, rgba(10, 24, 38, 0.96), rgba(3, 13, 24, 0.98));
+      border: 1px solid rgba(0, 255, 213, 0.28);
+      box-shadow: 0 14px 38px rgba(0, 0, 0, 0.26);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .secure-contact-icon:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0, 255, 213, 0.55);
+      box-shadow: 0 18px 48px rgba(0, 255, 213, 0.12);
+    }
+
+    .secure-contact-icon svg {
+      width: 27px;
+      height: 27px;
+    }
+
+  
+    .secure-contact-copy {
+      max-width: 760px;
+      margin: 0 auto 22px;
+      text-align: center;
+    }
+
+    .secure-contact-copy h3 {
+      margin: 0 0 10px;
+      font-size: clamp(26px, 3vw, 38px);
+      line-height: 1.15;
+      color: #ffffff;
+      letter-spacing: -0.03em;
+    }
+
+    .secure-contact-copy p {
+      margin: 0 auto;
+      max-width: 680px;
+      color: rgba(181, 220, 255, 0.86);
+      font-size: 16.5px;
+      line-height: 1.7;
+    }
+
+  
+    /* Smaller contact heading */
+    .secure-contact-copy {
+      margin: 0 auto 16px;
+    }
+
+    .secure-contact-copy h3 {
+      font-size: 18px !important;
+      line-height: 1.25 !important;
+      letter-spacing: 0.08em !important;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #00ffd5;
+    }
+
   </style>
 </head>
 <body>
-  <div class="grid-overlay"></div>
+  <div class="grid"></div>
   <div class="scanline"></div>
+  <div class="orb"></div>
 
   <nav>
-    <div class="logo"><span class="live-dot"></span> AHMED M // IT INFRA · GRC · CYBER · CLOUD</div>
-    <ul class="nav-links">
-      <li><a href="#overview">Overview</a></li>
-      <li><a href="#operations">Operations</a></li>
-      <li><a href="#experience">Experience</a></li>
+    <div class="nav-inner">
+      <div class="brand"><span class="dot"></span> Connected</div>
+      <ul class="nav-links">
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#leadership">Scope</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#cyber-collaboration">Cyber Front</a></li>
+      <li><a href="#processes-playbooks">Processes</a></li>
+      <li><a href="#ai-resilience">AI & Operations</a></li>
       <li><a href="#stack">Stack</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="terminal-status">STATUS: AVAILABLE</div>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <main>
-    <section class="hero" id="overview">
+  <main class="wrap">
+    <section class="hero" id="profile">
       <div>
-        <div class="eyebrow"><span class="live-dot"></span> IT INFRASTRUCTURE // GRC // CYBER SECURITY // CLOUD SECURITY</div>
-        <h1><span class="gradient-text">Ahmed M</span></h1>
-        <p class="hero-subtitle">
-          IT Infrastructure, GRC, Cybersecurity, Cloud Security, and Managed Services leader with 16+ years of experience leading enterprise technology operations, security governance, infrastructure modernization, endpoint protection, cloud controls, risk management, and cyber defense programs that convert technical complexity into business-ready outcomes.
+        <div class="kicker"><span class="dot"></span> Protecting Enterprises · Evolving Capabilities · Managing Change</div>
+        <h1><span class="gradient">Ahmed M</span></h1>
+        <div class="hero-title">Technology leadership shaped by operations, governance, accountability, and scale.</div>
+        <p class="hero-copy">
+          I am a technology and cybersecurity leader with 14+ years of experience across infrastructure operations, security, governance, endpoint protection, managed services, and enterprise transformation. My career has been shaped in environments where service availability, security posture, customer trust, financial discipline, and business continuity all matter at the same time.
         </p>
-        <div class="cta-row">
-          <a href="#operations" class="btn btn-primary">View Professional Profile</a>
-          <a href="#contact" class="btn btn-secondary">Connect</a>
-        </div>
-        <div class="meta-strip">
-          <span>USA</span>
-          <span>CISO-Level Partner</span>
-          <span>IT & Security Transformation</span>
-          <span>MSSP / Managed Services</span>
-          <span>NIST · ISO 27001 · SOC 2</span>
-        </div>
+        <p class="hero-copy">
+          My profile reflects a career built through real operations, structured leadership, accountable delivery, and practical business judgment. I bring the technical credibility of an operator, the discipline of a service leader, and the execution mindset required to manage complex enterprise and managed services environments.
+        </p>
       </div>
 
-      <aside class="command-panel fade-in">
-        <div class="panel-header">
-          <span>Executive Profile</span>
-          <span class="threat-chip">RISK: CONTROLLED</span>
+      <aside class="command-panel">
+        <div class="panel-head">
+          <span>Leadership Snapshot</span>
         </div>
         <div class="metric-grid">
-          <div class="metric-card">
-            <div class="value accent">16+</div>
-            <div class="label">Years Security & Delivery Leadership</div>
-          </div>
-          <div class="metric-card">
-            <div class="value green">24x7</div>
-            <div class="label">IT Infra & Security Operations</div>
-          </div>
-          <div class="metric-card">
-            <div class="value amber">45+</div>
-            <div class="label">Global Technical Team Leadership</div>
-          </div>
-          <div class="metric-card">
-            <div class="value blue">99%+</div>
-            <div class="label">Incident Response SLA Compliance</div>
-          </div>
+          <div class="metric"><strong>14+</strong><span>Years across infrastructure, cybersecurity, governance, and service delivery leadership</span></div>
+          <div class="metric"><strong>24x7</strong><span>Experience leading always-on IT and security operations supporting critical environments</span></div>
+          <div class="metric"><strong>Scale</strong><span>Managed direct, extended, client-facing, escalation, and cross-functional technical teams</span></div>
+          <div class="metric"><strong>P&L</strong><span>P&L-aware delivery with focus on utilization, scope, service quality, and cost discipline</span></div>
+        </div>
+        <div class="leadership-note">
+          The scope of my leadership is better represented by the operating model I managed, not only the number of people in the structure.
         </div>
       </aside>
     </section>
 
-    <section class="section" id="operations">
-      <div class="section-heading">
+    <section class="section" id="leadership">
+      <div class="section-head">
         <div>
-          <div class="section-kicker">Operational Focus</div>
-          <h2 class="section-title">Technology and security leadership across infrastructure, cloud, GRC, and cyber operations.</h2>
+          <div class="section-label">Professional Profile</div>
+          <h2>Not just technical leadership. Operational leadership with business accountability.</h2>
         </div>
-        <p class="section-note">Focused on IT infrastructure operations, cloud security, endpoint protection, GRC, cyber defense, managed services delivery, automation, stakeholder governance, and measurable operating outcomes.</p>
+        <div class="punch">The strength of a team is not measured only by size. It is measured by ownership, maturity, consistency, and the confidence it creates for the business.</div>
       </div>
 
-      <div class="cards-grid">
-        <article class="card fade-in">
-          <div class="icon">01</div>
-          <h3>Infrastructure & Cyber Operations Leadership</h3>
-          <p>Designing, scaling, and governing infrastructure, endpoint, cloud, network, and cybersecurity operations across enterprise and managed services environments.</p>
+      <div class="body-copy">
+        <p>My leadership journey has not been limited to one function or one technology area. I have worked across infrastructure, security operations, governance, service delivery, cloud security, endpoint protection, client management, team development, executive reporting, and transformation execution.</p>
+        <p>This cross-functional exposure shaped how I lead. I do not look at technology as isolated systems or tools. I look at it as an operating model made up of people, process, platforms, risk, cost, performance, and customer outcomes.</p>
+        <p>I have led teams where the responsibility was larger than headcount. It involved building capability, creating structure, managing accountability, mentoring future leaders, handling escalations, aligning service expectations, improving delivery discipline, and ensuring that teams could perform consistently under pressure.</p>
+        <p>My leadership experience also includes P&L-aware service delivery, where operational performance, resource utilization, service quality, client satisfaction, scope control, and financial discipline had to be managed together as part of the same leadership responsibility.</p>
+      </div>
+
+      <div class="cards" style="margin-top:22px;">
+        <article class="card">
+          <div class="num">01</div>
+          <h3>Team Leadership Beyond Headcount</h3>
+          <p>I have managed and influenced direct teams, extended delivery groups, client-facing resources, escalation teams, engineering support, operations personnel, and cross-functional stakeholders across complex technology environments.</p>
         </article>
-        <article class="card fade-in">
-          <div class="icon">02</div>
-          <h3>GRC, Risk & Compliance Governance</h3>
-          <p>Translating IT, infrastructure, cloud, and cyber risk into executive-ready decisions, control maturity roadmaps, audit evidence, governance reviews, and compliance-ready operating practices.</p>
+        <article class="card">
+          <div class="num">02</div>
+          <h3>P&L-Aware Delivery</h3>
+          <p>My managed services leadership has included awareness of cost, utilization, contract expectations, margin impact, productivity, resource allocation, renewal confidence, and customer value.</p>
         </article>
-        <article class="card fade-in">
-          <div class="icon">03</div>
-          <h3>Managed Services & Enterprise Delivery</h3>
-          <p>Building customer-centric managed services operating models with clear service catalogs, performance reporting, KPI governance, onboarding, renewal, and continuous improvement discipline.</p>
+        <article class="card">
+          <div class="num">03</div>
+          <h3>Operating Model Discipline</h3>
+          <p>The focus has been to build teams that are not only technically capable, but structured, accountable, confident, measurable, and trusted by the business.</p>
         </article>
       </div>
     </section>
 
-    <section class="section" id="experience">
+    <section class="section" id="journey">
+      <div class="section-head">
+        <div>
+          <div class="section-label">Career Journey</div>
+          <h2>From infrastructure depth to enterprise technology and security leadership.</h2>
+        </div>
+        <div class="punch">From command line to leadership room, the career has been built on depth, discipline, and delivery.</div>
+      </div>
+
+      <div class="story-grid">
+        <aside class="timeline">
+          <div class="timeline-box"><b>Foundation</b><span>Infrastructure and systems operations</span></div>
+          <div class="timeline-box"><b>Expansion</b><span>Cybersecurity and managed services</span></div>
+          <div class="timeline-box"><b>Advancement</b><span>GRC, cloud security, and cyber defense</span></div>
+          <div class="timeline-box"><b>Enterprise Scale</b><span>Technology, security, delivery, and business accountability</span></div>
+        </aside>
+
+        <div class="chapters">
+          <article class="chapter">
+            <div class="chapter-phase">Chapter 1 · Foundation</div>
+            <h3>Infrastructure was the foundation. Discipline was the lesson.</h3>
+            <p>My career began in enterprise infrastructure and systems operations. This early stage gave me direct exposure to the realities of technology environments: outages, incidents, escalations, user impact, network dependencies, system availability, monitoring gaps, documentation issues, and the pressure of restoring services quickly and correctly.</p>
+            <p>Working close to the infrastructure layer helped me build a practical understanding of how enterprise systems operate and how they fail. It also shaped my approach to cybersecurity and governance later in my career. Security cannot be effective without operational visibility. Governance cannot be meaningful without understanding how controls work in real environments.</p>
+            <div class="mini-punch">Before I led technology strategy, I learned how technology breaks, recovers, scales, and supports the business.</div>
+          </article>
+
+          <article class="chapter">
+            <div class="chapter-phase">Chapter 2 · Expansion</div>
+            <h3>From keeping systems running to keeping organizations protected.</h3>
+            <p>As my infrastructure background matured, my responsibilities expanded into cybersecurity operations, service delivery, vulnerability management, incident response, and managed services leadership. This phase moved my focus from infrastructure support into broader security and operational accountability.</p>
+            <p>Managed services experience added another layer of complexity. It required leading across multiple environments, managing different stakeholder expectations, balancing delivery commitments, maintaining service quality, handling escalations, and ensuring operational consistency across teams.</p>
+            <div class="mini-punch">Managed services taught me that strong delivery is where technical execution, customer trust, and financial discipline meet.</div>
+          </article>
+
+          <article class="chapter">
+            <div class="chapter-phase">Chapter 3 · Advancement</div>
+            <h3>Governance is where security becomes repeatable, measurable, and defensible.</h3>
+            <p>My career later expanded into governance, risk management, compliance alignment, cloud security, identity governance, endpoint security, SIEM modernization, and executive-level security reporting.</p>
+            <p>I have worked with frameworks such as NIST CSF, ISO 27001, SOC 2, ISO/IEC 27032, and ITIL to support governance maturity, control alignment, risk visibility, audit readiness, and operational accountability. Controls needed to work in real operations. Policies needed to support execution. Risk reporting needed to be understandable to leadership.</p>
+            <div class="mini-punch">The goal is not more paperwork. The goal is control, visibility, accountability, and confidence.</div>
+          </article>
+
+          <article class="chapter">
+            <div class="chapter-phase">Chapter 4 · Enterprise Scale</div>
+            <h3>Leading at scale means managing people, performance, risk, cost, and trust together.</h3>
+            <p>Today, my focus is enterprise-scale technology and security leadership. I lead across infrastructure, cybersecurity operations, GRC, cloud security, endpoint protection, managed services, operational governance, and transformation programs.</p>
+            <p>At this stage, leadership is not only about maintaining operations. It is about building operating models that are secure, resilient, measurable, financially responsible, and aligned with the business.</p>
+            <div class="mini-punch">At scale, leadership is about creating a system where people, process, performance, and accountability work together.</div>
+          </article>
+
+          <article class="chapter">
+            <div class="chapter-phase">Cross-Industry Scope</div>
+            <h3>Experience across industries where technology, security, delivery, and risk operate differently.</h3>
+            <p>My career has included cross-industry exposure across MSSPs, managed services, manufacturing, oil and gas, healthcare, retail, enterprise technology operations, cybersecurity programs, GRC functions, and FinOps-aware cloud and service delivery environments.</p>
+            <p>This exposure shaped how I approach leadership. Every vertical has different drivers: healthcare requires resilience and trust, oil and gas demands operational continuity and risk discipline, manufacturing depends on availability and process control, retail moves at customer-experience speed, and MSSP or managed services environments require consistency, scale, client confidence, and measurable outcomes.</p>
+            <div class="mini-punch">Different industries taught the same leadership truth: technology only matters when it protects operations, improves decisions, and supports the business.</div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="capabilities">
+      <div class="section-head">
+        <div>
+          <div class="section-label">Core Capabilities</div>
+          <h2>A multi-domain profile built for complex technology environments.</h2>
+        </div>
+        <div class="punch">The profile is built around the ability to connect technology, people, risk, cost, and execution.</div>
+      </div>
+
+      <div class="split">
+        <div class="feature">
+          <h3>Infrastructure and Application Service Delivery</h3>
+          <p>Experience across infrastructure and application portfolio management, end-to-end service delivery, service management, capacity planning, change control, monitoring, availability, modernization, and operational reporting.</p>
+        </div>
+        <div class="feature">
+          <h3>Security Operations and SOC Leadership</h3>
+          <p>Experience across SOC leadership, 24x7 operations, incident response, major incident management, CSIRT coordination, security monitoring, threat hunting, detection engineering, escalation governance, cyber fusion workflows, and operational security maturity.</p>
+        </div>
+        <div class="feature">
+          <h3>Governance, Risk, and Compliance</h3>
+          <p>Experience supporting governance programs aligned with NIST CSF, ISO 27001, SOC 2, ISO/IEC 27032, ITIL, audit readiness, risk reporting, policy governance, and control maturity.</p>
+        </div>
+        <div class="feature">
+          <h3>Cloud and Identity Security</h3>
+          <p>Experience with AWS, Azure, Microsoft Sentinel, Microsoft Defender, Entra ID, IAM, PAM, MFA, workload protection, logging, monitoring, and cloud security governance.</p>
+        </div>
+        <div class="feature">
+          <h3>Managed Services and Delivery</h3>
+          <p>Experience leading service delivery with focus on SLA performance, client satisfaction, onboarding, escalation management, KPI reporting, renewal confidence, and continuous service improvement.</p>
+        </div>
+        <div class="feature">
+          <h3>Business and Financial Awareness</h3>
+          <p>Experience operating in service delivery environments where leadership required awareness of cost, utilization, contract expectations, margin impact, productivity, resource allocation, and customer value.</p>
+        </div>
+
+        <div class="feature">
+          <h3>BCP, DR and Business Continuity</h3>
+          <p>Experience supporting business continuity planning, disaster recovery readiness, service restoration, dependency awareness, crisis coordination, resilience testing, and business-aligned continuity practices.</p>
+        </div>
+        <div class="feature">
+          <h3>SOPs, Process Buildout and Operating Discipline</h3>
+          <p>Built and improved SOPs, service delivery processes, escalation paths, documentation standards, reporting templates, governance routines, onboarding structures, and audit-ready operational practices.</p>
+        </div>
+        <div class="feature">
+          <h3>Customer Success and Client Governance</h3>
+          <p>Experience across customer success, client onboarding, account health reviews, service reviews, relationship management, retention support, customer advocacy, technical account management, and client satisfaction tracking.</p>
+        </div>
+        <div class="feature">
+          <h3>Backlog Reduction and Security Posture Improvement</h3>
+          <p>Helped MSSP and client environments reduce operational backlog, improve ticket hygiene, strengthen prioritization, mature workflows, reduce noise, increase ownership, and shift security posture from reactive handling toward structured improvement.</p>
+        </div>
+        <div class="feature">
+          <h3>RFP, RFI and Service Growth Support</h3>
+          <p>Experience supporting account planning, service mapping, RFP and RFI responses, renewal discussions, service expansion, upsell and cross-sell alignment, and business relationship management across infrastructure and security services.</p>
+        </div>
+        <div class="feature">
+          <h3>Resource and P&L Management</h3>
+          <p>Experience across resource planning, workload balancing, utilization visibility, cost discipline, SOW alignment, contract scope awareness, service quality, delivery efficiency, and P&L-aware operating decisions.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="cyber-collaboration">
       <div class="section-heading">
         <div>
-          <div class="section-kicker">Professional Progress</div>
-          <h2 class="section-title">Continuous growth across enterprise technology and security domains.</h2>
+          <div class="section-kicker">Cyber Collaboration and Threat Landscape</div>
+          <h2 class="section-title">Working independently and with industry professionals to stay aligned with a changing cyber threat landscape.</h2>
         </div>
-        <p class="section-note">A capability-driven progression focused on scaling leadership, operational maturity, technical governance, infrastructure modernization, and enterprise transformation.</p>
+        <p class="section-note">Cyber leadership requires more than internal execution. It requires awareness, collaboration, practical intelligence, and the ability to translate changing threats into action.</p>
       </div>
 
       <div class="cards-grid">
         <article class="card fade-in">
-          <div class="icon">▲</div>
-          <h3>Leadership Growth</h3>
-          <p>Progressed from hands-on infrastructure and systems operations into enterprise-wide leadership across cyber operations, cloud security, managed services, governance, and strategic delivery.</p>
+          <div class="icon">FIELD</div>
+          <h3>Independent Cyber Research and Operational Review</h3>
+          <p>I actively work through cyber topics, operational patterns, threat activity, security workflows, and practical risk scenarios to understand how threats are changing and how organizations should respond with better visibility, controls, and execution discipline.</p>
         </article>
 
         <article class="card fade-in">
-          <div class="icon">◉</div>
-          <h3>Operational Maturity</h3>
-          <p>Built operational maturity through service governance, executive reporting, process optimization, stakeholder management, KPI ownership, escalation management, and high-availability operations.</p>
+          <div class="icon">PEER</div>
+          <h3>Industry and Practitioner Collaboration</h3>
+          <p>I engage with security practitioners, technology leaders, delivery teams, client stakeholders, and industry professionals to exchange practical perspectives, validate operating assumptions, and understand how different environments are responding to modern cyber risk.</p>
         </article>
 
         <article class="card fade-in">
-          <div class="icon">⬢</div>
-          <h3>Enterprise Transformation</h3>
-          <p>Led modernization initiatives spanning infrastructure transformation, cloud adoption, endpoint visibility, SIEM modernization, security governance, automation, and enterprise risk alignment.</p>
+          <div class="icon">THREAT</div>
+          <h3>Changing Threat Landscape Awareness</h3>
+          <p>My focus includes ransomware operations, identity-driven attacks, supply chain exposure, cloud misconfiguration, endpoint compromise, vulnerability exploitation, AI-enabled attacker behavior, third-party risk, and the operational impact of emerging threats on business continuity.</p>
+        </article>
+
+        <article class="card fade-in">
+          <div class="icon">ACTION</div>
+          <h3>From Threat Awareness to Practical Improvement</h3>
+          <p>I translate cyber threat changes into practical improvements across detection, response, vulnerability prioritization, governance, playbooks, executive reporting, backlog reduction, control validation, and stakeholder communication.</p>
         </article>
       </div>
 
-      <div class="intel-layout" style="margin-top:24px;">
-        <div class="timeline">
-          <div class="timeline-item fade-in">
-            <div class="date">FOUNDATION</div>
-            <h3>Infrastructure & Systems</h3>
-            <p>Built core expertise across enterprise infrastructure, systems administration, monitoring, support operations, networking, and secure platform management.</p>
-          </div>
-
-          <div class="timeline-item fade-in">
-            <div class="date">EXPANSION</div>
-            <h3>Security & Service Delivery</h3>
-            <p>Expanded into cybersecurity operations, managed services, service delivery governance, stakeholder engagement, vulnerability management, and operational leadership.</p>
-          </div>
-
-          <div class="timeline-item fade-in">
-            <div class="date">ADVANCEMENT</div>
-            <h3>Cloud, GRC & Cyber Leadership</h3>
-            <p>Advanced into enterprise cloud security, governance, compliance, cyber defense operations, endpoint security, IAM/PAM, executive reporting, and strategic transformation initiatives.</p>
-          </div>
-
-          <div class="timeline-item fade-in">
-            <div class="date">ENTERPRISE SCALE</div>
-            <h3>Executive Technology & Security Leadership</h3>
-            <p>Driving enterprise-scale operations across IT infrastructure, cybersecurity, managed services, governance, operational resilience, and organizational transformation.</p>
-          </div>
-        </div>
-
-        <div class="matrix">
-          <article class="card fade-in">
-            <div class="icon">INF</div>
-            <h3>Infrastructure & Operations</h3>
-            <ul>
-              <li>Enterprise infrastructure modernization</li>
-              <li>Network, server, endpoint, and cloud operations</li>
-              <li>Operational resilience and uptime governance</li>
-              <li>Service optimization and transformation</li>
-            </ul>
-          </article>
-
-          <article class="card fade-in">
-            <div class="icon">GRC</div>
-            <h3>Governance & Risk</h3>
-            <ul>
-              <li>Risk and compliance governance</li>
-              <li>Audit readiness and security frameworks</li>
-              <li>Policy, standards, and operational controls</li>
-              <li>Executive reporting and stakeholder alignment</li>
-            </ul>
-          </article>
-
-          <article class="card fade-in">
-            <div class="icon">CLD</div>
-            <h3>Cloud & Endpoint</h3>
-            <ul>
-              <li>Cloud security and workload protection</li>
-              <li>Endpoint visibility and detection</li>
-              <li>Identity, access, MFA, and PAM governance</li>
-              <li>Security architecture and monitoring</li>
-            </ul>
-          </article>
-
-          <article class="card fade-in">
-            <div class="icon">MS</div>
-            <h3>Managed Services</h3>
-            <ul>
-              <li>Global delivery and service governance</li>
-              <li>KPI, SLA, and escalation ownership</li>
-              <li>Cross-functional team leadership</li>
-              <li>Client engagement and transformation programs</li>
-            </ul>
-          </article>
-        </div>
+      <div class="panel fade-in">
+        <div class="mini-punch">The cyber landscape does not stand still. My approach is to stay connected, keep learning, compare field realities, and turn threat awareness into better operating models.</div>
       </div>
+    </section>
+
+    <section class="section" id="processes-playbooks">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">Processes, Playbooks and Workbooks</div>
+          <h2 class="section-title">Operating discipline across infrastructure, applications, cybersecurity, GRC, cloud, managed services, and continuity.</h2>
+        </div>
+        <p class="section-note">Structured execution is what turns tools, teams, and leadership expectations into repeatable outcomes.</p>
+      </div>
+
+      <div class="panel fade-in">
+        <p class="body-copy">Strong technology leadership is not built only on platforms, tools, or individual expertise. It is built on repeatable operating models that help teams deliver consistently across infrastructure, applications, cybersecurity, GRC, cloud, managed services, client delivery, business continuity, and service management.</p>
+
+        <p class="body-copy">A major part of my leadership approach is building the operational foundation behind the work. This includes processes, SOPs, playbooks, workbooks, trackers, templates, runbooks, governance routines, escalation models, reporting structures, onboarding materials, readiness checklists, and decision-support artifacts that help teams move from informal execution to structured delivery.</p>
+
+        <p class="body-copy">I have worked across environments where processes were missing, inconsistent, overly manual, or dependent on tribal knowledge. My focus has been to convert those gaps into practical operating assets that teams can use every day. Whether the scope is infrastructure support, application services, security operations, vulnerability management, audit readiness, cloud governance, client onboarding, resource planning, backlog reduction, incident response, service reviews, or business continuity, I focus on creating structure that improves ownership, visibility, speed, and accountability.</p>
+
+        <p class="body-copy">This work is not limited to documentation. It is about building a working system around people, processes, tools, and leadership expectations. A good playbook helps a team make decisions faster. A good workbook gives leadership visibility. A good SOP reduces confusion. A good tracker exposes blockers. A good governance process creates accountability without slowing execution.</p>
+
+        <div class="mini-punch">Processes create consistency. Playbooks create decision confidence. Workbooks create visibility.</div>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card fade-in">
+          <div class="icon">OPS</div>
+          <h3>Infrastructure and Application Operations</h3>
+          <p>Processes for service delivery, platform support, application operations, incident handling, change coordination, capacity planning, escalation management, asset tracking, service health reviews, and operational reporting.</p>
+        </article>
+
+        <article class="card fade-in">
+          <div class="icon">SEC</div>
+          <h3>Cybersecurity and Security Operations</h3>
+          <p>Playbooks, triage workflows, investigation guides, escalation paths, detection follow-up processes, threat validation routines, vulnerability management trackers, and response coordination models.</p>
+        </article>
+
+        <article class="card fade-in">
+          <div class="icon">GRC</div>
+          <h3>GRC, Audit and Risk Management</h3>
+          <p>Control validation workflows, evidence trackers, audit readiness templates, risk registers, compliance mapping workbooks, policy review processes, exception handling models, and governance reporting formats.</p>
+        </article>
+
+        <article class="card fade-in">
+          <div class="icon">CLD</div>
+          <h3>Cloud, Identity and FinOps-Aware Governance</h3>
+          <p>Operating structures for cloud security visibility, identity reviews, access governance, workload protection follow-ups, service consumption awareness, cost discipline, utilization tracking, and cloud decision support.</p>
+        </article>
+
+        <article class="card fade-in">
+          <div class="icon">MSP</div>
+          <h3>Managed Services and Client Delivery</h3>
+          <p>Onboarding workbooks, client health trackers, service review templates, SLA and KPI dashboards, account planning structures, resource allocation trackers, escalation models, and delivery governance routines.</p>
+        </article>
+
+        <article class="card fade-in">
+          <div class="icon">BCP</div>
+          <h3>BCP, DR and Business Continuity</h3>
+          <p>Recovery checklists, dependency mapping, escalation paths, crisis communication structures, readiness reviews, service restoration workflows, and business-critical operations tracking.</p>
+        </article>
+
+        <article class="card fade-in">
+          <div class="icon">KM</div>
+          <h3>Team Development and Knowledge Management</h3>
+          <p>Onboarding guides, training workbooks, QA checklists, role-based readiness models, process walkthroughs, operational handover templates, and knowledge repositories to improve ramp-up and consistency.</p>
+        </article>
+
+        <article class="card fade-in">
+          <div class="icon">GOV</div>
+          <h3>Governance Rhythm and Leadership Visibility</h3>
+          <p>Recurring review structures, action trackers, blocker visibility, ownership models, executive reporting templates, operational dashboards, and decision-support artifacts that keep leadership aligned with execution.</p>
+        </article>
+      </div>
+
+      <div class="panel fade-in">
+        <div class="mini-punch">Together, these assets turn scattered execution into a mature operating system across technology, security, governance, and service delivery.</div>
+      </div>
+    </section>
+
+    <section class="section" id="ai-resilience">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">AI-Enabled Operations and Security</div>
+          <h2 class="section-title">AI-enabled IT operations, cybersecurity, GRC, and decision support.</h2>
+        </div>
+        <p class="section-note">A practical view of AI from IT Ops to Security and GRC, focused on visibility, prioritization, automation, decision support, and measurable operating outcomes.</p>
+      </div>
+
+      <div class="mini-punch" style="margin-bottom:18px;">AI is most useful when it becomes operational muscle: faster context, cleaner decisions, smarter prioritization, and stronger governance.</div>
+      <div class="cards-grid">
+        <article class="card fade-in">
+          <div class="icon">IT OPS</div>
+          <h3>AI for IT Operations</h3>
+          <p>Using AI to connect signals across events, tickets, service health, capacity, availability, and backlog trends, turning operational noise into clearer priorities, faster summaries, and better service decisions.</p>
+        </article>
+
+        <article class="card fade-in">
+          <div class="icon">SEC AI</div>
+          <h3>AI for Cybersecurity</h3>
+          <p>Applying AI-assisted security capabilities such as Arcanna AI and Phantom AI-style decision support to enrich alerts, prioritize triage, accelerate playbooks, summarize threat context, and improve SOC productivity while keeping analyst judgment and governance in control.</p>
+        </article>
+
+        <article class="card fade-in">
+          <div class="icon">GRC AI</div>
+          <h3>AI for GRC and Risk</h3>
+          <p>Using AI-enabled approaches to organize evidence, map controls, enrich risk registers, support policy review, accelerate compliance narratives, improve third-party risk review, and make governance reporting easier to consume.</p>
+        </article>
+<article class="card fade-in">
+          <div class="icon">MSSP AI</div>
+          <h3>MSSP and Managed Services</h3>
+          <p>Using AI-minded operating models across managed services and MSSP delivery to improve service visibility, reporting speed, backlog focus, escalation intelligence, KPI governance, client health awareness, and P&L-aware decisions.</p>
+        </article>
+</div>
     </section>
 
     <section class="section" id="stack">
-      <div class="section-heading">
+      <div class="section-head">
         <div>
-          <div class="section-kicker">Security Stack</div>
-          <h2 class="section-title">Infrastructure, cloud, endpoint, GRC, and cyber stack.</h2>
+          <div class="section-label">Technology and Tools</div>
+          <h2>Tools are valuable when they are governed, integrated, measured, and used with purpose.</h2>
         </div>
-        <p class="section-note">Hands-on leadership across infrastructure operations, cloud platforms, endpoint security, identity governance, GRC frameworks, SIEM/SOAR, vulnerability management, ITSM, client delivery, and executive reporting.</p>
+        <div class="punch">The best technology stack is not the largest one. It is the one that creates visibility, ownership, and action.</div>
       </div>
 
-      <div class="cards-grid">
-        <article class="card fade-in">
-          <h3>Infrastructure & Service Operations</h3>
-          <div class="tag-cloud">
-            <span class="tag">ServiceNow</span><span class="tag">Jira</span><span class="tag">BMC Remedy</span><span class="tag">ManageEngine</span><span class="tag">SLA / KPI Governance</span><span class="tag">Capacity Planning</span><span class="tag">Server Operations</span><span class="tag">Network Operations</span><span class="tag">ITIL</span>
-          </div>
-        </article>
-        <article class="card fade-in">
-          <h3>Cyber, Endpoint & Detection</h3>
-          <div class="tag-cloud">
-            <span class="tag">Splunk</span><span class="tag">Microsoft Sentinel</span><span class="tag">Elastic</span><span class="tag">CrowdStrike</span><span class="tag">Defender</span><span class="tag">Trend Micro XDR</span><span class="tag">MITRE ATT&CK</span><span class="tag">Darktrace</span><span class="tag">Incident Response</span>
-          </div>
-        </article>
-        <article class="card fade-in">
-          <h3>Cloud, GRC & Security Controls</h3>
-          <div class="tag-cloud">
-            <span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">IAM / PAM</span><span class="tag">NIST CSF</span><span class="tag">ISO 27001</span><span class="tag">SOC 2</span><span class="tag">Tenable.sc</span><span class="tag">Qualys</span><span class="tag">Palo Alto</span><span class="tag">Imperva WAF</span>
-          </div>
-        </article>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <h3>SIEM, SOAR, XDR and AI-Assisted SOC</h3>
+          <p class="body-copy">Security monitoring, alert review, incident triage, response coordination, detection tuning, automation, AI-assisted prioritization, and escalation workflows.</p>
+          <div class="chips"><span class="chip">Splunk</span><span class="chip">Microsoft Sentinel</span><span class="chip">Elastic Stack</span><span class="chip">QRadar</span><span class="chip">LogRhythm</span><span class="chip">AlienVault</span><span class="chip">FortiSOAR</span><span class="chip">Splunk Phantom</span><span class="chip">Arcanna AI</span><span class="chip">Phantom AI</span><span class="chip">CrowdStrike Falcon</span><span class="chip">Microsoft Defender</span><span class="chip">Trend Micro XDR</span><span class="chip">McAfee</span><span class="chip">Darktrace</span></div>
+        </div>
+        <div class="tool-card">
+          <h3>Cloud, Identity and Endpoint Security</h3>
+          <p class="body-copy">Cloud governance across Azure and AWS, including identity, endpoint, workload protection, CSPM, visibility, logging, monitoring, and control alignment.</p>
+          <div class="chips"><span class="chip">AWS</span><span class="chip">Azure</span><span class="chip">Defender for Cloud</span><span class="chip">Defender for Endpoint</span><span class="chip">Defender for Office 365</span><span class="chip">Sentinel</span><span class="chip">Entra ID</span><span class="chip">IAM</span><span class="chip">PAM</span><span class="chip">MFA</span><span class="chip">CSPM</span></div>
+        </div>
+        <div class="tool-card">
+          <h3>Vulnerability, Exposure and Network Security</h3>
+          <p class="body-copy">Exposure management, vulnerability prioritization, firewall governance, NDR, WAF, remediation tracking, and risk-based reporting.</p>
+          <div class="chips"><span class="chip">Tenable.sc</span><span class="chip">Qualys</span><span class="chip">Rapid7 InsightVM</span><span class="chip">Nessus</span><span class="chip">AppScan</span><span class="chip">Metasploit</span><span class="chip">Palo Alto</span><span class="chip">Fortinet</span><span class="chip">Cisco</span><span class="chip">Check Point</span><span class="chip">NDR</span><span class="chip">IPS / IDS</span><span class="chip">Imperva WAF</span><span class="chip">AWS WAF</span></div>
+        </div>
+        <div class="tool-card">
+          <h3>ITSM, Workflow, CRM and Reporting</h3>
+          <p class="body-copy">Incident, service request, change, problem, escalation, service delivery reporting, operational tracking, client health, and continuous improvement workflows.</p>
+          <div class="chips"><span class="chip">ServiceNow</span><span class="chip">Jira</span><span class="chip">BMC Remedy</span><span class="chip">ManageEngine</span><span class="chip">Zendesk</span><span class="chip">Salesforce</span><span class="chip">Power BI</span><span class="chip">ITIL V4</span><span class="chip">SLA / KPI</span></div>
+        </div>
+        <div class="tool-card">
+          <h3>GRC, Compliance and Risk Frameworks</h3>
+          <p class="body-copy">Governance alignment, control maturity, audit readiness, regulatory alignment, policy governance, and executive risk reporting.</p>
+          <div class="chips"><span class="chip">NIST CSF</span><span class="chip">NIST 800-53</span><span class="chip">ISO 27001</span><span class="chip">ISO 20000</span><span class="chip">SOC 2</span><span class="chip">CIS Controls</span><span class="chip">ITIL</span><span class="chip">Risk Controls</span><span class="chip">Audit Readiness</span></div>
+        </div>
+        <div class="tool-card">
+          <h3>Threat Intelligence and Detection Frameworks</h3>
+          <p class="body-copy">Threat intelligence operations, adversary mapping, detection-as-code thinking, TTP analysis, and intelligence-led security operations.</p>
+          <div class="chips"><span class="chip">Recorded Future</span><span class="chip">Anomali</span><span class="chip">MISP</span><span class="chip">SOC Prime</span><span class="chip">MITRE ATT&CK</span><span class="chip">Cyber Kill Chain</span><span class="chip">TTP Mapping</span><span class="chip">Purple Teaming</span></div>
+        </div>
+        <div class="tool-card">
+          <h3>Leadership Operating Model</h3>
+          <p class="body-copy">Team capability, SOPs, process buildout, escalation discipline, executive reporting, client governance, service reviews, resource planning, backlog reduction, and P&L-aware service delivery.</p>
+          <div class="chips"><span class="chip">Operating Rhythm</span><span class="chip">Resource Planning</span><span class="chip">Utilization</span><span class="chip">QBRs</span><span class="chip">Escalations</span><span class="chip">Cost Discipline</span><span class="chip">SOPs</span><span class="chip">Backlog Reduction</span><span class="chip">Client Health</span><span class="chip">Service Reviews</span></div>
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-heading">
+    <section class="section" id="credentials">
+      <div class="section-head">
         <div>
-          <div class="section-kicker">Credentials</div>
-          <h2 class="section-title">Certifications & professional credentials.</h2>
+          <div class="section-label">Credentials</div>
+          <h2>Certifications support the knowledge. Experience builds the judgment.</h2>
         </div>
+        <div class="punch">The credentials show the learning path. The leadership journey shows how that knowledge has been applied.</div>
       </div>
-      <div class="cert-row">
-        <div class="cert fade-in"><strong>CISM</strong><span>ISACA</span></div>
-        <div class="cert fade-in"><strong>PMP</strong><span>PMI</span></div>
-        <div class="cert fade-in"><strong>ISO/IEC 27032</strong><span>Lead Cyber Security Manager</span></div>
-        <div class="cert fade-in"><strong>AZ-500 / SC-200</strong><span>Microsoft Security</span></div>
-        <div class="cert fade-in"><strong>ITIL V4</strong><span>Service Management</span></div>
+      <div class="certs">
+        <div class="cert"><strong>CISM</strong><span>Certified Information Security Manager, ISACA</span></div>
+        <div class="cert"><strong>PMP</strong><span>Project Management Professional, PMI</span></div>
+        <div class="cert"><strong>ISO/IEC 27032</strong><span>Lead Cyber Security Manager</span></div>
+        <div class="cert"><strong>AZ-500</strong><span>Microsoft Azure Security Engineer</span></div>
+        <div class="cert"><strong>SC-200</strong><span>Microsoft Security Operations Analyst</span></div>
+        <div class="cert"><strong>ITIL V4</strong><span>IT Service Management Foundation</span></div>
       </div>
     </section>
 
     <section class="section" id="contact">
-      <div class="contact-panel fade-in">
+      <div class="availability">
         <div>
-          <div class="section-kicker">Contact</div>
-          <h2>Ready for IT infrastructure, GRC, cloud security, cybersecurity, and managed services leadership.</h2>
-          <p>Open to executive and senior leadership opportunities across IT infrastructure, GRC, cybersecurity, cloud security, endpoint security, managed services, and enterprise technology transformation.</p>
-          <div class="cta-row">
-            <a href="mailto:cyber.evangelist@outlook.com" class="btn btn-primary">Email Ahmed</a>
-            <a href="https://www.linkedin.com/in/ahmedevangelist" class="btn btn-secondary">LinkedIn</a>
+          <div class="section-label">Connect</div>
+          <h2>Open for professional conversations, practical insights, and meaningful technology leadership connections.</h2>
+          <p class="hero-copy" style="margin-top:18px; margin-bottom:0;">This profile is a professional space to connect, exchange practical perspectives, and discuss technology leadership, security operations, governance, service delivery, transformation, and resilient operating models. The focus is simple: meaningful conversations, real-world lessons, and thoughtful collaboration.</p>
+        </div>
+        <div class="contact-card">
+    
+
+          
+          <div class="secure-contact-copy">
+            <h3>Let’s stay connected</h3>
           </div>
-        </div>
-        <div class="contact-list">
-          <span>Email: cyber.evangelist@outlook.com</span>
-          <span>Phone: +1 717 461 1865</span>
-          <span>Location: United States</span>
-          <span>Focus: IT Infra · GRC · Cyber · Cloud Security · Endpoint · Managed Services</span>
-        </div>
-      </div>
+
+          <div class="secure-contact-icons" aria-label="Secure contact actions">
+            <button class="secure-contact-icon" type="button" data-secure-action="email" title="Email">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 6.5h16a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1-1.5 1.5H4A1.5 1.5 0 0 1 2.5 16V8A1.5 1.5 0 0 1 4 6.5Zm.7 2.2 6.4 4.7a1.5 1.5 0 0 0 1.8 0l6.4-4.7M5 16l4.2-3.2M19 16l-4.2-3.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <button class="secure-contact-icon" type="button" data-secure-action="linkedin" title="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6.8 9.6v8.1M6.8 6.5v.1M10.7 17.7v-4.6c0-2.1 1.2-3.5 3.1-3.5 1.8 0 2.8 1.2 2.8 3.4v4.7M10.7 9.9v7.8M4.8 3.8h14.4c.6 0 1 .4 1 1v14.4c0 .6-.4 1-1 1H4.8c-.6 0-1-.4-1-1V4.8c0-.6.4-1 1-1Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+</section>
+  
+    <section class="closing-footer fade-in" id="thank-you">
+      <div class="closing-kicker">Connected with gratitude</div>
+      <h2>Thank you for visiting</h2>
+      <p>Grateful for the opportunity to share my journey, lessons learned, and continued commitment to building better, safer, and more resilient technology outcomes.</p>
     </section>
+
   </main>
 
-  <footer>
-    <span>AHMED M // IT INFRA · GRC · CYBER · CLOUD PORTFOLIO</span>
-    <span>LIVE PROFILE · TECHNOLOGY & SECURITY LEADERSHIP · 2026</span>
-  </footer>
+  
 
   <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
+    document.addEventListener("DOMContentLoaded", function () {
+      const decode = (arr) => arr.map(c => String.fromCharCode(c)).join("");
+      const email = decode([99,121,98,101,114,46,101,118,97,110,103,101,108,105,115,116,64,111,117,116,108,111,111,107,46,99,111,109]);
+      const linkedin = decode([104,116,116,112,115,58,47,47,119,119,119,46,108,105,110,107,101,100,105,110,46,99,111,109,47,105,110,47,97,104,109,101,100,101,118,97,110,103,101,108,105,115,116]);
+
+      document.querySelectorAll("[data-secure-action='email']").forEach((el) => {
+        el.addEventListener("click", function () {
+          window.location.href = "mailto:" + email;
+        });
+        el.setAttribute("aria-label", "Email");
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.fade-in, .card, .timeline-item, .cert').forEach(el => {
-      el.classList.add('fade-in');
-      observer.observe(el);
-    });
-
-    window.addEventListener('scroll', () => {
-      const nav = document.querySelector('nav');
-      nav.style.background = window.scrollY > 50 ? 'rgba(5, 7, 11, 0.95)' : 'rgba(5, 7, 11, 0.84)';
+      document.querySelectorAll("[data-secure-action='linkedin']").forEach((el) => {
+        el.addEventListener("click", function () {
+          window.open(linkedin, "_blank", "noopener,noreferrer");
+        });
+        el.setAttribute("aria-label", "LinkedIn");
+      });
     });
   </script>
+
 </body>
 </html>
